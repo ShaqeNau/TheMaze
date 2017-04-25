@@ -11,12 +11,9 @@ public class ball : MonoBehaviour {
     {
         game = FindObjectOfType<Game>();
         transform.position = maze.start.position;
+        GetComponent<Rigidbody>().AddForce(Vector3.zero, ForceMode.VelocityChange);
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
 
     void OnTriggerEnter()
     {

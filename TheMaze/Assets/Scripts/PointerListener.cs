@@ -7,12 +7,12 @@ using UnityEngine.Events;
 
 public class PointerListener : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
-    public float rotationValue;
-    Maze maze;
+    public float zoomValue;
+    CameraHandler cam;
     bool pressed = false;
     void Awake()
     {
-        maze = FindObjectOfType<Maze>();
+        cam = FindObjectOfType<CameraHandler>();
     }
     public void OnPointerDown(PointerEventData eventData)
     {
@@ -30,7 +30,7 @@ public class PointerListener : MonoBehaviour, IPointerDownHandler, IPointerUpHan
             return;
         else
         {
-            maze.Rotate(rotationValue);
+            cam.Zoom(zoomValue);
         }
     }
 
